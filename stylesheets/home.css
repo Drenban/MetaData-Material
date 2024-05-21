@@ -1,0 +1,51 @@
+body {
+    background: url('assets/images/1-landscape.png') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+#background-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5; /* 可调整透明度以得到最佳视觉效果 */
+    animation: fadeIn 30s infinite;
+}
+
+/* 为每个 background 添加不同的动画延迟 */
+.background:nth-child(1) { animation-delay: 0s; }
+.background:nth-child(2) { animation-delay: 5s; }
+.background:nth-child(3) { animation-delay: 10s; }
+.background:nth-child(4) { animation-delay: 15s; }
+.background:nth-child(5) { animation-delay: 20s; }
+.background:nth-child(6) { animation-delay: 25s; }
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    17% { opacity: 1; }
+    25% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+<div id="background-wrapper">
+    <div class="background" style="background-image: url('images/image1.jpg');"></div>
+    <div class="background" style="background-image: url('images/image2.jpg');"></div>
+    <div class="background" style="background-image: url('images/image3.jpg');"></div>
+    <div class="background" style="background-image: url('images/image4.jpg');"></div>
+    <div class="background" style="background-image: url('images/image5.jpg');"></div>
+    <div class="background" style="background-image: url('images/image6.jpg');"></div>
+</div>
+

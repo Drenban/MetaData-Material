@@ -1,0 +1,89 @@
+:root {
+    --table-background: #fff;
+    --table-border-color: #ddd;
+    --sort-arrow-color: #404040;
+    --shadow-color: rgba(0, 0, 0, 0.10);
+    --header-gradient-start: #f6f6f6;
+    --header-gradient-end: #eee;
+  }
+  
+  table {
+    background: var(--table-background);
+    max-width: 100%;
+    width: 100%;
+    margin: 10px 0;
+    border: 1px solid var(--table-border-color);
+    border-collapse: collapse;
+    box-shadow: 0 0 4px var(--shadow-color);
+  }
+  
+  table th,
+  table td {
+    padding: 8px;
+    line-height: 18px;
+    text-align: left;
+    border-top: 1px solid var(--table-border-color);
+  }
+  
+  table th {
+    background: linear-gradient(to bottom, var(--header-gradient-start), var(--header-gradient-end));
+    text-shadow: 0 1px 0 #fff;
+    font-weight: bold;
+    vertical-align: bottom;
+  }
+  
+  table td {
+    vertical-align: top;
+  }
+  
+  table thead:first-child tr th,
+  table thead:first-child tr td {
+    border-top: none;
+  }
+  
+  table tbody + tbody {
+    border-top: 2px solid var(--table-border-color);
+  }
+  
+  table th + th,
+  table td + td,
+  table th + td,
+  table td + th {
+    border-left: 1px solid var(--table-border-color);
+  }
+  
+  th[role="columnheader"]:not(.no-sort) {
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  th[role="columnheader"]:not(.no-sort)::after {
+    content: '';
+    float: right;
+    margin-top: 7px;
+    border-width: 0 4px 4px;
+    border-style: solid;
+    border-color: var(--sort-arrow-color) transparent;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s, visibility 0.2s;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  th[aria-sort="ascending"]:not(.no-sort)::after {
+    border-bottom: none;
+    border-width: 4px 4px 0;
+  }
+  
+  th[aria-sort]:not(.no-sort)::after,
+  th[role="columnheader"]:not(.no-sort):hover::after {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  th[aria-sort]:not(.no-sort)::after {
+    opacity: 0.4;
+  }
