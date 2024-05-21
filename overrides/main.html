@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block htmltitle %}
+  <title>MetaByte Metrics</title>
+{% endblock %}
+
+{% block scripts %}
+  <!-- Add scripts that need to run before here -->
+  {{ super() }}
+  <!-- Add scripts that need to run afterwards here -->
+{% endblock %}
+
+{% block announce %}
+  <!-- Add announcement here, including arbitrary HTML -->
+  有关更新，请通过 @MetaByte-Metrics 联系我们 
+  <a href="https://drenban.github.io/MetaByte-Metrics/wechat.html" class="wechat-icon"><i class="fab fa-weixin"></i></a>
+{% endblock %}
+
+{% block outdated %}
+  You're not viewing the latest version.
+  <a href="{{ '../' ~ base_url }}"> 
+    <strong>Click here to go to latest.</strong>
+  </a>
+{% endblock %}

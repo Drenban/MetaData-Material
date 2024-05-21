@@ -1,0 +1,408 @@
+site_name: "MetaData-Material"
+
+site_url: https://drenban.github.io/MetaData-Material
+
+repo_url: https://drenban.github.io/MetaData-Material
+repo_name: "MetaData-Material"
+
+site_encoding: utf-8  # 确保文件以UTF-8编码处理
+
+theme:
+  name: material # mkdocs, readthedocs
+  language: zh # en
+  direction: ltr # rtl
+  custom_dir: overrides
+
+  favicon: assets/images/logo.svg
+  icon:
+    logo: material/logo
+    repo: fontawesome/brands/git-alt
+
+    edit: material/pencil 
+    view: material/eye
+
+    previous: fontawesome/solid/angle-left
+    next: fontawesome/solid/angle-right
+
+    annotation: material/star-four-points-circle
+
+    admonition:
+      note: octicons/tag-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      success: octicons/check-16
+      question: octicons/question-16
+      warning: octicons/alert-16
+      failure: octicons/x-circle-16
+      danger: octicons/zap-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16
+
+  features:
+    - content.code.copy
+
+    - content.action.edit
+    - content.action.view
+
+    - content.tooltips
+
+    - content.code.annotate
+
+    - content.tabs.link
+
+    # navigation
+    - navigation.footer
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    # - navigation.sections
+    # - navigation.expand
+    # - navigation.prune
+    - navigation.indexes
+
+    - toc.follow
+
+    - navigation.top
+
+    # header
+    - header.autohide
+    - announce.dismiss
+
+    # search
+    - search.suggest
+    - search.highlight
+    - search.share
+
+    # Edit and View source of this page
+    - content.action.edit
+    - content.action.view
+
+  palette:
+
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple # indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+  font:
+    text: Roboto
+    code: Raph Levien
+
+plugins:
+  - search:
+      # enabled: false
+
+      lang: 
+        - en # zh
+
+      separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
+
+      pipeline:
+        - stemmer
+        - stopWordFilter
+        - trimmer
+
+  - minify:
+      minify_html: true
+
+      # Segmentation of Chinese via jieba.
+      # jieba_dict: dict.txt # dict.txt.small、dict.txt.big
+      # jieba_dict_user: user_dict.txt
+
+  # Built-in tags plugin
+  - tags
+  - offline
+
+  # - social # cairo
+
+  # - blog
+
+  # - privacy # None
+
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      slide_effect: slide
+      width: 100%
+      height: auto
+      zoomable: true
+      draggable: true
+      skip_classes:
+        - custom-skip-class-name
+      auto_caption: false
+      caption_position: bottom
+      background: white
+      shadow: true
+      manual: false
+
+  - table-reader:
+      base_path: "config_dir"
+      data_path: "docs/assets/tables/"
+      search_page_directory: True
+      allow_missing_files: False
+      select_readers:
+        - read_raw
+        - read_csv
+        - read_fwf
+        - read_excel
+
+markdown_extensions:
+
+  # Python Markdown
+  - abbr
+  - pymdownx.snippets
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
+
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+            - name: mermaid
+              class: mermaid
+              format: !!python/name:pymdownx.superfences.fence_code_format
+
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
+
+  - attr_list
+  - md_in_html
+
+  - footnotes
+
+  - toc:
+      title: 此页内容
+      permalink: ⚓︎
+      permalink_title: 锚点链接到本节以供参考
+
+      toc_depth: 3
+
+      # slugify: !!python/object/apply:pymdownx.slugs.slugify {}
+
+  - tables
+
+  # Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+
+  - pymdownx.betterem:
+      smart_enable: all
+
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+
+  - pymdownx.keys
+
+  - pymdownx.critic:
+      mode: view # view、accept、reject
+
+  - pymdownx.highlight:
+      anchor_linenums: true
+      use_pygments: true # false use JavaScript
+      pygments_lang_class: true
+      auto_title: true
+      linenums: true
+      linenums_style: pymdownx-inline
+      line_spans: __span
+
+  - pymdownx.inlinehilite
+  - pymdownx.smartsymbols
+
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons
+
+extra:
+#   alternate:
+#     - name: English
+#       link: /en/ 
+#       lang: en
+#     - name: Deutsch
+#       link: /de/
+#       lang: de
+
+  social:
+    - icon: fontawesome/brands/github
+      link: https://fosstodon.org/@squidfunk
+    
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:<email-address>
+    
+    - icon: fontawesome/brands/mastodon
+      link: https://fosstodon.org/@squidfunk
+      name: squidfunk on Fosstodon
+
+    - icon: fontawesome/brands/github
+    - icon: fontawesome/brands/gitlab
+    - icon: fontawesome/brands/x-twitter
+    - icon: fontawesome/brands/mastodon
+    - icon: fontawesome/brands/docker
+    - icon: fontawesome/brands/facebook
+    - icon: fontawesome/brands/instagram
+    - icon: fontawesome/brands/linkedin
+    - icon: fontawesome/brands/slack
+    - icon: fontawesome/brands/discord
+    - icon: fontawesome/brands/pied-piper-alt
+
+  generator: True
+
+  homepage: https://drenban.github.io/MetaData-Material
+
+  version:
+      provider: mike
+
+  analytics:
+    provider: google
+    property: G-XXXXXXXXXX
+
+    feedback:
+      title: 本页内容对您是否有所帮助，亦或您是否通过本页内容学习了新知识?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: 很有帮助
+          data: 1
+          note: >-
+            感谢您的反馈，这将是我们的动力源泉!
+        - icon: material/emoticon-sad-outline
+          name: 希望改进
+          data: 0
+          note: >- 
+            谢谢您的反馈! 您能通过以下方式帮助我们改进此页面
+            使用我们的 <a href="..." target="_blank" rel="noopener">反馈表格</a>.
+
+  consent:
+    title: Cookie 使用声明
+    description: >- 
+      我们的网站使用 Cookie 来提升用户体验，识别您的重复访问和偏好以及提供个性化服务。
+      同时衡量我们文档的有效性以及用户是否找到了他们正在搜索的内容。如果您同意我们的 
+      Cookie 政策，您的选择将帮助我们改进文档。
+
+    actions:
+      - accept
+      - reject
+      - manage 
+
+extra_css:
+  - stylesheets/extra.css
+  - stylesheets/tablesort.css
+  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css
+
+  # KaTeX CSS
+  - https://unpkg.com/katex@0/dist/katex.min.css
+
+  # Javascripts highlight CSS
+  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css
+
+extra_javascript:
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - javascripts/sorts/tablesort.date.js
+  - javascripts/sorts/tablesort.dotsep.js
+  - javascripts/sorts/tablesort.filesize.js
+  - javascripts/sorts/tablesort.monthname.js
+  - javascripts/sorts/tablesort.number.js
+  - javascripts/tablesort.js
+
+  # Table Button
+  - javascripts/button/download-csv-table-button.js
+  - javascripts/button/download-txt-table-button.js
+
+  # MathJax 
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+  # KaTeX 
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+
+  # Javascripts highlight
+  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js
+  - javascripts/highlight.js
+
+watch:
+  - includes
+
+nav:
+  - 首页:
+    - nav/home/index.md
+  - 课程指南:
+    - nav/curriculum/index.md
+    - 技术分析: 
+        - nav/curriculum/technical/index.md
+        # - 认识蜡烛: nav/curriculum/technical/candles/index.md
+        # - 基本指标: nav/curriculum/technical/indicators/index.md
+        # - 分析原理: nav/curriculum/technical/principle/index.md
+        # - 图形分析: nav/curriculum/technical/graphic/index.md
+    - 定量分析: nav/curriculum/quantitative/index.md
+    - 财务报表分析: nav/curriculum/statement/index.md
+  - 扩展内容:
+    - nav/extended/index.md
+    - nav/extended/appendix.md
+    - MkDocs:
+      - nav/extended/MkDocs/Material_for_MkDocs.md
+  - 案例展示:
+    - nav/case/index.md
+  - 数据分析:
+    - nav/data/index.md
+    - nav/data/source.md
+    - nav/data/cleaning.md
+    - nav/data/analysis.md
+    - nav/data/results.md
+    - nav/data/Contact_information.md
+    - nav/data/Conclusion_and_Recommendation.md
+    - nav/data/appendix.md
+  - 内部人员:
+    - nav/insiders/index.md
+    # - nav/insiders/getting-started.md
+    # - nav/insiders/faq/sponsoring.md
+    - nav/insiders/changelog/index.md
+    # - nav/insiders/upgrade.md
+  - 博客:
+    - nav/blog/index.md
+
+# copyright: Copyright &copy; 2019 - 2024 MetaData-Material
+
+copyright: >
+  Copyright &copy; 2019 - 2024 MetaData-Material –
+  <a href="#__consent">更改 Cookie 设置</a>
