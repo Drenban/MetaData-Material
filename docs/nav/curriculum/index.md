@@ -1,3 +1,3 @@
-# Welcome to MetaByte Metrics
+# Welcome to MetaData-Material
 
 ## Curriculum

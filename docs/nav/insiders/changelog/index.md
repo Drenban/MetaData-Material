@@ -1,3 +1,7 @@
+---
+hide: feedback
+---
+
 # 日志变更
 
 ## 仅供内部人员查阅
@@ -1068,19 +1072,19 @@
 
 ### 1.4.0 <small>August 30, 2020</small> { id="1.4.0" }
 
-- Added support for autohiding header on scroll
+- Added support for autohiding header on scroll-->
 
-### 1.3.0 <small>August 26, 2020</small> { id="1.3.0" }
+### 1.3.0 <small>8 26, 2020</small> { id="1.3.0" }
 
-- Added support for user-selectable color palettes
+- 完善站点框架结构，定义各个部分功能性质
 
-### 1.2.0 <small>August 11, 2020</small> { id="1.2.0" }
+### 1.2.0 <small>8 11, 2020</small> { id="1.2.0" }
 
-- Added feature to expand navigation by default
+- 添加头部 **联系我们**，微信联系方式
 
-### 1.1.0 <small>August 3, 2020</small> { id="1.1.0" }
+### 1.1.0 <small>8 3, 2020</small> { id="1.1.0" }
 
-- Added highlighting of search results-->
+- 添加打赏、赞助商、投资人规则
 
 ### 1.0.0 <small>8 28, 2019</small> { id="1.0.0" }
 

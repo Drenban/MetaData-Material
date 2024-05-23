@@ -1,4 +1,4 @@
-site_name: "MetaData-Material"
+site_name: "元数据材料"
 
 site_url: https://drenban.github.io/MetaData-Material
 
@@ -366,6 +366,8 @@ watch:
 nav:
   - 首页:
     - nav/home/index.md
+    - nav/home/overview.md
+    - nav/home/framework.md
   - 课程指南:
     - nav/curriculum/index.md
     - 技术分析: 
@@ -378,9 +380,9 @@ nav:
     - 财务报表分析: nav/curriculum/statement/index.md
   - 扩展内容:
     - nav/extended/index.md
-    - nav/extended/appendix.md
     - MkDocs:
       - nav/extended/MkDocs/Material_for_MkDocs.md
+    - nav/extended/appendix.md
   - 案例展示:
     - nav/case/index.md
   - 数据分析:
@@ -394,12 +396,17 @@ nav:
     - nav/data/appendix.md
   - 内部人员:
     - nav/insiders/index.md
-    # - nav/insiders/getting-started.md
-    # - nav/insiders/faq/sponsoring.md
+    - nav/insiders/sponsorship-and-rewards/rewards.md
+    - nav/insiders/sponsorship-and-rewards/sponsorship.md
+    - nav/insiders/investment/investment.md
+    # - nav/insiders/cooperation-and-contact/cooperation-details.md
+    # - nav/insiders/cooperation-and-contact/contact-information.md
+    # - nav/insiders/faq/faq.md
     - nav/insiders/changelog/index.md
-    # - nav/insiders/upgrade.md
   - 博客:
     - nav/blog/index.md
+  - 社区:
+    - nav/community/index.md
 
 # copyright: Copyright &copy; 2019 - 2024 MetaData-Material
 
