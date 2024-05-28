@@ -262,15 +262,15 @@ extra:
 #       lang: de
 
   social:
-    - icon: fontawesome/brands/github
-      link: https://fosstodon.org/@squidfunk
+    # - icon: fontawesome/brands/github
+    #   link: https://fosstodon.org/@squidfunk
     
     - icon: fontawesome/solid/paper-plane
-      link: mailto:<email-address>
+      link: mailto:<Drenban@yandex.com>
     
-    - icon: fontawesome/brands/mastodon
-      link: https://fosstodon.org/@squidfunk
-      name: squidfunk on Fosstodon
+    # - icon: fontawesome/brands/mastodon
+    #   link: https://fosstodon.org/@squidfunk
+    #   name: squidfunk on Fosstodon
 
     - icon: fontawesome/brands/github
     - icon: fontawesome/brands/gitlab
